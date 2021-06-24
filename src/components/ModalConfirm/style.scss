@@ -1,0 +1,68 @@
+.modal {
+    position: absolute;
+    inset: 100px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    outline: none;
+    padding: 20px;
+
+    p {
+        font-size: 14px;
+        color: #737380;
+    }
+
+    > div {
+        display: flex;
+        padding: 10px 0;
+
+        .btn-cancel {
+            background: #DBDCDD;
+            color: #737380;
+        }
+
+        button {
+            margin: 0 10px;
+            height: 50px;
+            border-radius: 8px;
+            font-weight: 500;
+            background: #E73F5D;
+            color: #FEFEFE;
+            padding: 0 32px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             
+            cursor: pointer;
+            border: 0;
+        
+            transition: filter 0.2s;
+        
+            img {
+                margin-right: 8px;
+            }
+        
+            &.outlined {
+                background: #fff;
+                border: 1px solid #835afd;
+                color: #835afd;
+            }
+        
+            &:not(:disabled):hover {
+                filter: brightness(0.9);
+            }
+        
+            &:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

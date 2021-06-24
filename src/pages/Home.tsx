@@ -40,7 +40,10 @@ export function Home() {
             return;
         }
 
-        history.push(`/rooms/${roomCode}`);
+        let route = `/rooms/${roomCode}`;
+        if (user && roomRef.val().authorId === user?.id) route = 'admin' + route;
+
+        history.push(route);
     }
 
     return (
