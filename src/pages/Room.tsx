@@ -41,10 +41,13 @@ export function Room() {
         await database.ref(`rooms/${roomId}/questions`).push(question);
     }
 
-    async function handleLikeQuestion(questionId: string) {
-        await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
-            authorId: user?.id,
-        });
+    async function handleLikeQuestion(questionId: string, likeId?: string) {
+        const likeRef = database.ref(`rooms/${roomId}/questions/${questionId}/likes`);
+        if (likeId) {
+            await likeRef.child(likeId).remove();
+        } else {
+            await likeRef.push({authorId: user?.id});
+        }
     }
 
     return (
@@ -92,10 +95,10 @@ export function Room() {
                                 {...question}
                             >
                                 <button 
-                                    className={ `like-button ${question.hasLiked ? 'liked' : '' }` }
+                                    className={ `like-button ${question.likeId ? 'liked' : '' }` }
                                     type="button"
                                     aria-label="Like Question"
-                                    onClick={() => handleLikeQuestion(question.id)}
+                                    onClick={() => handleLikeQuestion(question.id, question.likeId)}
                                 >
                                     <span>{question.likeCount}</span>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
