@@ -12,7 +12,10 @@ jobs:
     environment: prodenv
     steps:
       - uses: actions/checkout@v2
-      - run: yarn install && yarn build
+      - name: yarn install and build
+        run: |
+          yarn install
+          yarn build
         env:
             REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
             REACT_APP_AUTH_DOMAIN: ${{ secrets.REACT_APP_AUTH_DOMAIN }}
