@@ -69,7 +69,7 @@ export function Home() {
                             value={roomCode}
                         />
                         <Button type="submit">
-                            Entrar na sala teste2
+                            Entrar na sala
                         </Button>
                     </form>
                 </div>
