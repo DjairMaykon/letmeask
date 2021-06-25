@@ -10,8 +10,7 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: yarn install
+      - run: npm install
   build_and_deploy:
     needs: install
     runs-on: ubuntu-latest
