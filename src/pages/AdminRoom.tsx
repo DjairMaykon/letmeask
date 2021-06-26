@@ -38,11 +38,6 @@ export function AdminRoom() {
     const { questions, title, authorId, hasCheckedRoom } = useRoom(roomId);
     const [modalProps, setModalProps] = useState({} as ModalConfirmProps);
 
-    // useEffect(() => {
-    //     if ((user && authorId && user.id !== authorId) || (authorId && !user))
-    //         history.push(`/rooms/${roomId}`);
-    // }, [authorId, user, user?.id, roomId, history]);
-
     async function handleEndRoom() {
         setModalProps({
             modalIsOpen: true,
@@ -92,11 +87,9 @@ export function AdminRoom() {
             isHighlighted: isHighlighted
         });
     }
-    // console.log(authorId);
+
     if (hasCheckedUser && (!user || (hasCheckedRoom && authorId !== user.id)))
         return (<Redirect to={`/rooms/${roomId}`} />);
-    // else if (hasCheckedRoom && roomExists === false)
-    //     return (<Redirect to='/rooms/missing' />);
     else
         return (
             <div id="page-room">
