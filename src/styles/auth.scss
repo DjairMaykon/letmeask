@@ -3,6 +3,11 @@
     align-items: stretch;
     height: 100vh;
 
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 30px;
+    }
+
     aside {
         flex: 7;
         background: #835afd;
@@ -17,14 +22,14 @@
         }
 
         strong {
-            font: 700 36px 'Poppins', sans-serif;
-            line-height: 42px;
+            font: 700 2rem 'Poppins', sans-serif;
+            line-height: 3rem;
             margin-top: 16px;
         }
 
         p {
-            font-size: 24px;
-            line-height: 32px;
+            font-size: 1rem;
+            line-height: 1.5rem;
             margin-top: 16px;
             color: #f8f8f8;
         }
@@ -50,12 +55,6 @@
             align-self: center;
         }
 
-        h2 {
-            font-size: 24px;
-            margin: 64px 0 24px;
-            font-family: 'Poppins', sans-serif;
-        }
-
         form {
             input {
                 height: 50px;
@@ -67,6 +66,10 @@
 
             button {
                 margin-top: 16px;
+
+                @media (max-width: 768px) {
+                    margin-bottom: 32px;
+                }
             }
 
             button, input {
