@@ -16,7 +16,7 @@ import '../styles/auth.scss'
 import { useEffect } from 'react';
 
 type HomeState = {
-    state: {
+    state?: {
         roomIsEnded?: boolean,
         roomNotExists?: boolean
     }
@@ -29,10 +29,10 @@ export function Home() {
     const location = history.location as HomeState;
 
     useEffect(() => {
-        if (location.state.roomIsEnded) {
+        if (location.state?.roomIsEnded) {
             toast.error('Room is ended.');
         }
-        if (location.state.roomNotExists) {
+        if (location.state?.roomNotExists) {
             toast.error('Room not exists.');
         }
     }, []);
