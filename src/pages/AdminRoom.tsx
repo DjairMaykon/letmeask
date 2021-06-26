@@ -30,11 +30,11 @@ type RoomParams = {
 
 
 export function AdminRoom() {
-    const { user, hasCheckedUser } = useAuth();
-    const history = useHistory();
     const params = useParams<RoomParams>();
     const roomId = params.id;
     const { questions, title, authorId, hasCheckedRoom } = useRoom(roomId);
+    const { user, hasCheckedUser } = useAuth();
+    const history = useHistory();
     const [modalProps, setModalProps] = useState({} as ModalConfirmProps);
 
     async function handleEndRoom() {
@@ -87,9 +87,9 @@ export function AdminRoom() {
         });
     }
 
-    // if (hasCheckedUser && (!user || (hasCheckedRoom && authorId !== user.id)))
-    //     return (<Redirect to={`/rooms/${roomId}`} />);
-    // else
+    if (hasCheckedUser && (!user || (hasCheckedRoom && authorId !== user.id)))
+        return (<Redirect to={`/rooms/${roomId}`} />);
+    else
         return (
             <div id="page-room">
                 <header>

@@ -17,11 +17,11 @@ type RoomParams = {
 }
 
 export function Room() {
-    const { user, signInWithGoogle } = useAuth();
     const params = useParams<RoomParams>();
     const roomId = params.id;
-    const [newQuestion, setNewQuestion] = useState('');
     const { questions, title } = useRoom(roomId);
+    const { user, signInWithGoogle } = useAuth();
+    const [newQuestion, setNewQuestion] = useState('');
 
     async function handleSendQuestion(event: FormEvent) {
         event.preventDefault();

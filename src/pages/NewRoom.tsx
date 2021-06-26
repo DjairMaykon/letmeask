@@ -28,9 +28,9 @@ export function NewRoom() {
 
         history.push(`/admin/rooms/${firebaseRoom.key}`);
     }
-    // if(hasCheckedUser && !user?.id)
-    //     return (<Redirect to='/' />)
-    // else
+    if(hasCheckedUser && !user?.id)
+        return (<Redirect to='/' />)
+    else
         return (
             <div id="page-auth">
                 <aside>
