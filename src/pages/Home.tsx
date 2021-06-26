@@ -13,11 +13,30 @@ import googleIconImg from '../assets/images/google-icon.svg'
 import { Button } from '../components/Button'
 
 import '../styles/auth.scss'
+import { useEffect } from 'react';
+
+type HomeState = {
+    state: {
+        roomIsEnded?: boolean,
+        roomNotExists?: boolean
+    }
+}
 
 export function Home() {
     const history = useHistory();
     const { user, signInWithGoogle } = useAuth();
     const [roomCode, setRoomCode] = useState('');
+    const location = history.location as HomeState;
+
+    useEffect(() => {
+        if (location.state.roomIsEnded) {
+            toast.error('Room is ended.');
+        }
+        if (location.state.roomNotExists) {
+            toast.error('Room not exists.');
+        }
+    }, []);
+    
 
     async function handleCreateRoom() {
         if (!user) {

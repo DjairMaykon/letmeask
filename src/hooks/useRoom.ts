@@ -43,6 +43,9 @@ export function useRoom(roomId: string) {
         roomRef.on('value', room => {
             const databaseRoom = room.val();
             if (databaseRoom) {
+                if (databaseRoom.endedAt) {
+                    history.push('/', {roomIsEnded: true});                    
+                }
                 const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
     
                 const parsedQuestions = Object.entries(firebaseQuestions).map(([key, value]) => {
@@ -61,7 +64,7 @@ export function useRoom(roomId: string) {
                 setQuestions(sortedQuestions);
                 setAuthorId(databaseRoom.authorId);
             } else {
-                history.push('/rooms/missing');
+                history.push('/', {roomNotExists: true});
             }
             setHasCheckedRoom(true);
         });
