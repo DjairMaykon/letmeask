@@ -1,6 +1,6 @@
 .modal {
     position: absolute;
-    inset: 200px;
+    inset: 100px;
     border: 1px solid rgb(204, 204, 204);
     background: rgb(255, 255, 255);
     overflow: auto;
@@ -12,10 +12,6 @@
     align-items: center;
     outline: none;
     padding: 20px;
-
-    .modal-icon {
-        font-size: 48px
-    }
 
     p {
         font-size: 14px;
@@ -48,6 +44,10 @@
             border: 0;
         
             transition: filter 0.2s;
+        
+            img {
+                margin-right: 8px;
+            }
         
             &.outlined {
                 background: #fff;

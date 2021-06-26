@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 import { Redirect, useHistory, useParams } from 'react-router-dom'
 import logoImg from '../assets/images/logo.svg'
-import deleteImg from '../assets/images/delete.svg'
-import encerrarImg from '../assets/images/encerrar.svg'
+import { MdCancel, MdDelete } from 'react-icons/md'
 
 import { Button } from '../components/Button'
 import { Question } from '../components/Question'
@@ -16,7 +15,7 @@ import { useAuth } from '../hooks/useAuth'
 
 type ModalConfirmProps = {
     modalIsOpen: boolean,
-    iconImg: string,
+    icon: ReactNode,
     iconAlt?: string,
     modalTitle: string,
     modalContent: string,
@@ -41,7 +40,7 @@ export function AdminRoom() {
     async function handleEndRoom() {
         setModalProps({
             modalIsOpen: true,
-            iconImg: encerrarImg,
+            icon: (<MdCancel />),
             iconAlt: 'Encerrar icone',
             modalTitle: 'Encerrar sala',
             modalContent: 'Tem certeza que você deseja encerrar esta sala?',
@@ -59,7 +58,7 @@ export function AdminRoom() {
     async function handleDeleteQuestion(questionId: string) {
         setModalProps({
             modalIsOpen: true,
-            iconImg: deleteImg,
+            icon: (<MdDelete />),
             iconAlt: 'Deletar Questão',
             modalTitle: 'Excluir pergunta',
             modalContent: 'Tem certeza que você deseja excluir esta pergunta?',

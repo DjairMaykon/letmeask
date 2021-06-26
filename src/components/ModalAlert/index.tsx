@@ -1,12 +1,10 @@
-import { ReactNode } from 'react';
 import Modal from 'react-modal';
-import { IconContext } from 'react-icons/lib';
 
 import './style.scss';
 
 type ModalConfirmProps = {
     modalIsOpen: boolean,
-    icon: ReactNode,
+    iconImg?: string,
     iconAlt?: string,
     modalTitle?: string,
     modalContent?: string,
@@ -26,9 +24,7 @@ export function ModalConfirm(props: ModalConfirmProps) {
             onRequestClose={() => {}}
             contentLabel="Example Modal"
         >
-            <IconContext.Provider value={{ className: 'modal-icon' }}>
-                {props.icon}
-            </IconContext.Provider>
+            <img src={props.iconImg} alt={props.iconAlt ?? ''} />
             <h2>{props.modalTitle}</h2>
             <p>{props.modalContent}</p>
             <div>
