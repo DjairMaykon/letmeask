@@ -87,9 +87,9 @@ export function AdminRoom() {
         });
     }
 
-    if (hasCheckedUser && (!user || (hasCheckedRoom && authorId !== user.id)))
-        return (<Redirect to={`/rooms/${roomId}`} />);
-    else
+    // if (hasCheckedUser && (!user || (hasCheckedRoom && authorId !== user.id)))
+    //     return (<Redirect to={`/rooms/${roomId}`} />);
+    // else
         return (
             <div id="page-room">
                 <header>

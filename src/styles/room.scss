@@ -17,9 +17,16 @@
             > div {
                 display: flex;
                 gap: 16px;
-                
+
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                }
+
                 button {
                     height: 40px;
+                    @media (max-width: 768px) {
+                        width: 40vw;
+                    }
                 }
             }
         }
@@ -29,6 +36,10 @@
         max-width: 880px;
         margin: 0 auto;
 
+        @media (max-width: 940px) {
+            padding: 20px;
+        }
+
         .room-title {
             margin: 32px 0 24px;
             display: flex;
@@ -36,7 +47,7 @@
 
             h1 {
                 font-family: 'Poppins', sans-serif;
-                font-size: 24px;
+                font-size: 1.4rem;
                 color: #29292e;
             }
 
@@ -68,6 +79,13 @@
                 justify-content: space-between;
                 align-items: center;
                 margin-top: 16px;
+                
+                > button {
+                    @media (max-width: 768px) {
+                        font-size: 0.7rem;
+                        padding: 0 12px;
+                    }
+                }
 
                 .user-info {
                     display: flex;
@@ -97,7 +115,7 @@
                         border: 0;
                         color: #835afd;
                         text-decoration: underline;
-                        font-size: 14px;
+                        font-size: 0.8rem;
                         font-weight: 500;
                         cursor: pointer;
                     }
