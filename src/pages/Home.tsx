@@ -1,5 +1,5 @@
 import { useAuth } from '../hooks/useAuth'
-import { useHistory } from 'react-router'
+import { useHistory } from 'react-router-dom'
 import { FormEvent, useState } from 'react'
 
 import { database } from '../services/firebase'

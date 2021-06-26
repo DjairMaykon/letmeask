@@ -9,6 +9,7 @@ type User = {
 type AuthContextType = {
     user: User | undefined;
     signInWithGoogle:  () => Promise<void>;
+    hasCheckedUser: boolean;
 };
 
 type AuthContextProviderProps = {
@@ -18,7 +19,8 @@ type AuthContextProviderProps = {
 export const AuthContext = createContext({} as AuthContextType);
 
 export function AuthContextProvider(props: AuthContextProviderProps) {
-    const [user, setUser] = useState<User>()
+    const [user, setUser] = useState<User>();
+    const [hasCheckedUser, setHasCheckedUser] = useState(false);
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
@@ -35,6 +37,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
                     avatar: photoURL
                 });
             }
+            setHasCheckedUser(true);
         });
 
         return () => unsubscribe();
@@ -58,9 +61,10 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
                 avatar: photoURL
             });
         }
+        setHasCheckedUser(true);
     }
     return (
-        <AuthContext.Provider value={{ user, signInWithGoogle }}>
+        <AuthContext.Provider value={{ user, signInWithGoogle, hasCheckedUser }}>
             {props.children}
         </AuthContext.Provider>
     );
