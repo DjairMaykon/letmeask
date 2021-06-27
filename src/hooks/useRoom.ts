@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { database } from "../services/firebase";
 import { useAuth } from "./useAuth";
+import toast from 'react-hot-toast';
 
 type QuestionType = {
     id: string,
@@ -44,7 +45,8 @@ export function useRoom(roomId: string) {
             const databaseRoom = room.val();
             if (databaseRoom) {
                 if (databaseRoom.endedAt) {
-                    history.push('/', {roomIsEnded: true});                    
+                    toast.error('Room is ended.');
+                    history.push('/');                    
                 }
                 const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
     
@@ -64,7 +66,8 @@ export function useRoom(roomId: string) {
                 setQuestions(sortedQuestions);
                 setAuthorId(databaseRoom.authorId);
             } else {
-                history.push('/', {roomNotExists: true});
+                toast.error('Room not exists.');
+                history.push('/');
             }
             setHasCheckedRoom(true);
         });
