@@ -5,8 +5,9 @@
 }
 
 body {
-    background: #f8f8f8;
-    color: #29292e;
+    // background: #f8f8f8;
+    background: var(--color-background-1);
+    color: var(--color-text-1);
     font-size: 62.5%;
 }
 
