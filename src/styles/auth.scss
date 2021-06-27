@@ -30,13 +30,6 @@
                 height: 100%;
                 margin: 0 auto;
             }
-
-            .illustration-path-color1 {
-                fill: var(--color-secondary);
-            }
-            .illustration-path-color2 {
-                fill: var(--color-primary);
-            }
         }
 
         strong {
@@ -89,17 +82,7 @@
             height: 100%;
 
             @media (max-width: 768px) {
-                // width: 320px;
                 height: 10vh;
-            }
-
-            defs linearGradient {
-                stop:first-child {
-                    stop-color: var(--color-primary);
-                }
-                stop:last-child {
-                    stop-color: var(--color-secondary);
-                }
             }
         }
 
@@ -120,6 +103,7 @@
                 padding: 0 16px;
                 background: var(--color-background-1);
                 border: 1px solid var(--color-border-1);
+                color: var(--color-text-1);
             }
 
             button {
