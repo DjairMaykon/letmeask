@@ -1,6 +1,6 @@
 import { ReactNode, useState } from 'react'
 import { Redirect, useHistory, useParams } from 'react-router-dom'
-import logoImg from '../assets/images/logo.svg'
+import { ReactComponent as LogoSvg } from '../assets/images/logo.svg'
 import { MdCancel, MdDelete } from 'react-icons/md'
 
 import { Button } from '../components/Button'
@@ -94,7 +94,7 @@ export function AdminRoom() {
             <div id="page-room">
                 <header>
                     <div className="content">
-                        <img src={logoImg} alt="Letmeask" />
+                        <LogoSvg className='logo-svg' />
                         <div>
                             <RoomCode code={roomId} />
                             <Button 

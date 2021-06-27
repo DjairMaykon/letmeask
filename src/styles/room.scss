@@ -10,8 +10,19 @@
             justify-content: space-between;
             align-items: center;
 
-            > img {
+            .logo-svg {
                 max-height: 45px;
+
+                defs linearGradient {
+                    stop:first-child {
+                        // stop-color: #835AFD;
+                        stop-color: #3d99af;
+                    }
+                    stop:last-child {
+                        // stop-color: #E559F9;
+                        stop-color: #3daf7b;
+                    }
+                }
             }
 
             > div {

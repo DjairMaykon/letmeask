@@ -6,9 +6,9 @@ import toast, { Toaster } from 'react-hot-toast';
 
 import { database } from '../services/firebase'
 
-import illustrationImg from '../assets/images/illustration.svg'
-import logoImg from '../assets/images/logo.svg'
-import googleIconImg from '../assets/images/google-icon.svg'
+import { ReactComponent as IllustrationSvg } from '../assets/images/illustration.svg'
+import { ReactComponent as LogoSvg } from '../assets/images/logo.svg'
+import { ReactComponent as GoogleIconSvg } from '../assets/images/google-icon.svg'
 
 import { Button } from '../components/Button'
 
@@ -70,15 +70,15 @@ export function Home() {
     return (
         <div id="page-auth">
             <aside>
-                <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
+                <IllustrationSvg className='illustration-svg' />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
                 <p>Tire as dúvidas da sua audiência em tempo-real</p>
             </aside>
             <main>
                 <div className="main-content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <LogoSvg className='logo-svg' />
                     <button onClick={handleCreateRoom} className="create-room">
-                        <img src={googleIconImg} alt="Logo do Google" />
+                        <GoogleIconSvg />
                         Crie a sua sala com o Google
                     </button>
                     <div className="separator">ou entre em uma sala</div>

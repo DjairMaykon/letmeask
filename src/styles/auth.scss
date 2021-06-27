@@ -10,15 +10,24 @@
 
     aside {
         flex: 7;
-        background: #835afd;
+        background: #3d99af;
         color: #fff;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 120px 80px;
 
-        img {
-            max-width: 320 px;
+        .illustration-svg {
+            max-width: 320px;
+
+            .illustration-path-color1 {
+                // fill: #E559F9;
+                fill: #3daf7b;
+            }
+            .illustration-path-color2 {
+                // fill: #835AFD;
+                fill: #3d99af;
+            }
         }
 
         strong {
@@ -55,8 +64,21 @@
             margin-bottom: 32px;
         }
 
-        > img {
+        .logo-svg {
             align-self: center;
+            width: 320px;
+            height: 153px;
+
+            defs linearGradient {
+                stop:first-child {
+                    // stop-color: #835AFD;
+                    stop-color: #3d99af;
+                }
+                stop:last-child {
+                    // stop-color: #E559F9;
+                    stop-color: #3daf7b;
+                }
+            }
         }
 
         h2 {
@@ -93,7 +115,7 @@
             margin-top: 16px;
 
             a {
-                color: #e559f9;
+                color: #3daf7b;
             }
         }
     }
@@ -116,7 +138,7 @@
 
     transition: filter 0.2s;
 
-    img {
+    svg {
         margin-right: 8px;
     }
 
