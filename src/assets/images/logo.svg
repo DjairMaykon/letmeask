@@ -14,20 +14,20 @@ fill="url(#paint2_linear_logo)" />
 stroke="url(#paint3_linear_logo)" stroke-width="4.30079" />
 <defs>
 <linearGradient id="paint0_linear_logo" x1="87.6787" y1="18.999" x2="99.7578" y2="53.1105" gradientUnits="userSpaceOnUse">
-<stop stop-color="#485BFF"/>
-<stop offset="1" stop-color="#FF59F8"/>
+<stop stop-color="#3d99af"/>
+<stop offset="1" stop-color="#3daf7b"/>
 </linearGradient>
 <linearGradient id="paint1_linear_logo" x1="87.6787" y1="18.999" x2="99.7578" y2="53.1105" gradientUnits="userSpaceOnUse">
-<stop stop-color="#485BFF"/>
-<stop offset="1" stop-color="#FF59F8"/>
+<stop stop-color="#3d99af"/>
+<stop offset="1" stop-color="#3daf7b"/>
 </linearGradient>
 <linearGradient id="paint2_linear_logo" x1="87.6787" y1="18.999" x2="99.7578" y2="53.1105" gradientUnits="userSpaceOnUse">
-<stop stop-color="#485BFF"/>
-<stop offset="1" stop-color="#FF59F8"/>
+<stop stop-color="#3d99af"/>
+<stop offset="1" stop-color="#3daf7b"/>
 </linearGradient>
 <linearGradient id="paint3_linear_logo" x1="81.0842" y1="3" x2="141.295" y2="77.547" gradientUnits="userSpaceOnUse">
-<stop stop-color="#485BFF"/>
-<stop offset="1" stop-color="#FF59F8"/>
+<stop stop-color="#3d99af"/>
+<stop offset="1" stop-color="#3daf7b"/>
 </linearGradient>
 </defs>
 </svg>
