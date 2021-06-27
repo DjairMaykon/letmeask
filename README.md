@@ -4,7 +4,7 @@
 
 #### Next Level Week #6
 
-![Screenshot](./.github/letmeask.png)
+![Screenshot](./.github/letmeask.jpeg)
 
 Visitar a versão on-line: https://letmeask-b7fee.web.app/
 
