@@ -2,7 +2,7 @@
     height: 50px;
     border-radius: 8px;
     font-weight: 500;
-    background: #835afd;
+    background: #3d99af;
     color: #fff;
     padding: 0 32px;
 
@@ -15,14 +15,18 @@
 
     transition: filter 0.2s;
 
+    @media (max-width: 768px) {
+        font-size: 0.8rem;
+    }
+
     img {
         margin-right: 8px;
     }
 
     &.outlined {
         background: #fff;
-        border: 1px solid #835afd;
-        color: #835afd;
+        border: 1px solid #3d99af;
+        color: #3d99af;
     }
 
     &:not(:disabled):hover {

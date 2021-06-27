@@ -10,16 +10,34 @@
             justify-content: space-between;
             align-items: center;
 
-            > img {
+            .logo-svg {
                 max-height: 45px;
+
+                defs linearGradient {
+                    stop:first-child {
+                        // stop-color: #835AFD;
+                        stop-color: #3d99af;
+                    }
+                    stop:last-child {
+                        // stop-color: #E559F9;
+                        stop-color: #3daf7b;
+                    }
+                }
             }
 
             > div {
                 display: flex;
                 gap: 16px;
-                
+
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                }
+
                 button {
                     height: 40px;
+                    @media (max-width: 768px) {
+                        width: 40vw;
+                    }
                 }
             }
         }
@@ -29,6 +47,10 @@
         max-width: 880px;
         margin: 0 auto;
 
+        @media (max-width: 940px) {
+            padding: 20px;
+        }
+
         .room-title {
             margin: 32px 0 24px;
             display: flex;
@@ -36,13 +58,13 @@
 
             h1 {
                 font-family: 'Poppins', sans-serif;
-                font-size: 24px;
+                font-size: 1.4rem;
                 color: #29292e;
             }
 
             span {
                 margin-left: 16px;
-                background: #e559f9;
+                background: #3daf7b;
                 border-radius: 9999px;
                 padding: 8px 16px;
                 color: #fff;
@@ -68,6 +90,13 @@
                 justify-content: space-between;
                 align-items: center;
                 margin-top: 16px;
+                
+                > button {
+                    @media (max-width: 768px) {
+                        font-size: 0.7rem;
+                        padding: 0 12px;
+                    }
+                }
 
                 .user-info {
                     display: flex;
@@ -97,7 +126,7 @@
                         border: 0;
                         color: #835afd;
                         text-decoration: underline;
-                        font-size: 14px;
+                        font-size: 0.8rem;
                         font-weight: 500;
                         cursor: pointer;
                     }

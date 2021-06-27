@@ -1,4 +1,5 @@
-import copyImage from '../assets/images/copy.svg'
+import { MdContentCopy } from 'react-icons/md';
+import { IconContext } from 'react-icons/lib';
 
 import '../styles/room-code.scss'
 
@@ -14,7 +15,9 @@ export function RoomCode(props: RoomCodeProps) {
     return (
         <button className="room-code" onClick={copyCodeToClipboard}>
             <div>
-                <img src={copyImage} alt="Copy room code" />
+                <IconContext.Provider value={{ className: 'icon' }}>
+                    <MdContentCopy />
+                </IconContext.Provider>
             </div>
             <span>Sala #{props.code}</span>
         </button>
